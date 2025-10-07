@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="24128" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IGi-cB-aGO">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="24017"/>
+    </dependencies>
+    <scenes>
+        <!--Main Interface Controller-->
+        <scene sceneID="fRD-1l-P1O">
+            <objects>
+                <controller id="IGi-cB-aGO" customClass="MainInterfaceController">
+                    <items>
+                        <label width="136" height="37" alignment="center" text="Label" textAlignment="center" id="YS5-6Q-9Kf">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                        </label>
+                        <button width="1" alignment="left" title="Iniciar" id="JGD-2R-rYn">
+                            <connections>
+                                <action selector="actionButtonTapped" destination="IGi-cB-aGO" id="pyh-d3-aet"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="actionButton" destination="JGD-2R-rYn" id="MMY-Um-dS8"/>
+                        <outlet property="timerLabel" destination="YS5-6Q-9Kf" id="fvS-m3-Q3Z"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="139" y="131"/>
+        </scene>
+    </scenes>
+</document>
