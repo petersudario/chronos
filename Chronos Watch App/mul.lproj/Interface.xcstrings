@@ -1,0 +1,126 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "2JV-7a-Ve4.title" : {
+      "comment" : "Class = \"WKInterfaceButton\"; title = \"Salvar\"; ObjectID = \"2JV-7a-Ve4\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Salvar"
+          }
+        }
+      }
+    },
+    "5SG-2D-kc4.title" : {
+      "comment" : "Class = \"WKInterfaceButton\"; title = \"+\"; ObjectID = \"5SG-2D-kc4\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "+"
+          }
+        }
+      }
+    },
+    "25B-Ia-AiT.placeholder" : {
+      "comment" : "Class = \"string\"; placeholder = \"Pomodoro\"; ObjectID = \"25B-Ia-AiT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pomodoro"
+          }
+        }
+      }
+    },
+    "89n-nH-GsK.text" : {
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Pomodoro\"; ObjectID = \"89n-nH-GsK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pomodoro"
+          }
+        }
+      }
+    },
+    "aK2-Xl-XCl.text" : {
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Nenhum pre-set definido\"; ObjectID = \"aK2-Xl-XCl\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Nenhum pre-set definido"
+          }
+        }
+      }
+    },
+    "B1o-pQ-gbL.text" : {
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Nenhuma etapa definida\"; ObjectID = \"B1o-pQ-gbL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Nenhuma etapa definida"
+          }
+        }
+      }
+    },
+    "glr-VC-9GZ.title" : {
+      "comment" : "Class = \"WKInterfaceButton\"; title = \"+\"; ObjectID = \"glr-VC-9GZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "+"
+          }
+        }
+      }
+    },
+    "MeJ-EI-9hT.text" : {
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Estudo\"; ObjectID = \"MeJ-EI-9hT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Estudo"
+          }
+        }
+      }
+    },
+    "TeY-Hp-Qxw.text" : {
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"10:00\"; ObjectID = \"TeY-Hp-Qxw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10:00"
+          }
+        }
+      }
+    },
+    "uOa-42-3mP.title" : {
+      "comment" : "Class = \"WKInterfaceButton\"; title = \"Salvar\"; ObjectID = \"uOa-42-3mP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Salvar"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

@@ -6,79 +6,54 @@
 //
 
 #import "MainInterfaceController.h"
-
-@interface MainInterfaceController()
-@property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, assign) NSInteger remainingSeconds;
-@property (nonatomic, assign) BOOL isRunning;
-@end
+#import "PresetRowController.h"
 
 @implementation MainInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-    [self.timerLabel setText:@"25:00"];
     
-    self.isRunning = NO;
-    self.remainingSeconds = 25 * 60;
-    [self updateLabel];
+    self.presets = [[NSMutableArray alloc] init];
+    
+    [self configureView];
 }
 
-- (IBAction)actionButtonTapped {
-    if (self.isRunning) {
-        [self stopTimer];
+- (void)willActivate {
+    [super willActivate];
+    [self configureView];
+}
+
+- (void)configureView {
+    if (self.presets.count == 0) {
+        [self.presetsTable setHidden:YES];
+        [self.emptyStateGroup setHidden:NO];
     } else {
-        [self startTimer];
+        [self.presetsTable setHidden:NO];
+        [self.emptyStateGroup setHidden:YES];
+        
+        [self.presetsTable setNumberOfRows:self.presets.count withRowType:@"PresetRow"];
+        
+        for (NSInteger i = 0; i < self.presets.count; i++) {
+            PresetRowController *row = [self.presetsTable rowControllerAtIndex:i];
+            TimerPreset *preset = self.presets[i];
+            [row.presetNameLabel setText:preset.presetName];
+        }
     }
 }
 
-#pragma mark - Timer Control
-
-- (void)startTimer {
-    self.isRunning = YES;
-    [self.actionButton setTitle:@"Parar"];
+- (IBAction)addButtonTapped {
+    void (^presetCreationCompletionBlock)(TimerPreset *) = ^(TimerPreset *savedPreset) {
+        NSLog(@"3. Bloco de completude RECEBIDO na tela principal!");
+        
+        if (savedPreset) {
+            NSLog(@"4. Preset recebido com nome: %@", savedPreset.presetName);
+            [self.presets addObject:savedPreset];
+            [self configureView];
+        }
+    };
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                  target:self
-                                                selector:@selector(updateTimer)
-                                                userInfo:nil
-                                                 repeats:YES];
-}
-
-- (void)stopTimer {
-    self.isRunning = NO;
-    [self.actionButton setTitle:@"Iniciar"];
-    [self.timer invalidate];
-    self.timer = nil;
-}
-
-- (void)updateTimer {
-    if (self.remainingSeconds > 0) {
-        self.remainingSeconds--;
-        [self updateLabel];
-    } else {
-        [self stopTimer];
-        [self notifyFinished];
-    }
-}
-
-- (void)updateLabel {
-    NSInteger minutes = self.remainingSeconds / 60;
-    NSInteger seconds = self.remainingSeconds % 60;
-    NSString *text = [NSString stringWithFormat:@"%02ld:%02ld", (long)minutes, (long)seconds];
-    [self.timerLabel setText:text];
-}
-
-#pragma mark - Notificação
-
-- (void)notifyFinished {
-    WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
-    [device playHaptic:WKHapticTypeSuccess];
-    
-    [self.timerLabel setText:@"Fim"];
-    [self.actionButton setTitle:@"Reiniciar"];
-    
-    self.remainingSeconds = 25 * 60;
+    NSDictionary *context = @{@"completion": presetCreationCompletionBlock};
+    [self presentControllerWithName:@"AddPresetScreen" context:context];
 }
 
 @end

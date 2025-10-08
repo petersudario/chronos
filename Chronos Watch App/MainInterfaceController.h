@@ -7,14 +7,16 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "TimerPreset.h"
 
 @interface MainInterfaceController : WKInterfaceController
 
-@property (weak, nonatomic) IBOutlet WKInterfaceLabel *timerLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *actionButton;
+@property (nonatomic, weak) IBOutlet WKInterfaceGroup *emptyStateGroup;
+@property (nonatomic, weak) IBOutlet WKInterfaceTable *presetsTable;
+@property (nonatomic, strong) NSMutableArray<TimerPreset *> *presets;
+
+- (IBAction)addButtonTapped;
+
 
 @end
 
-NS_ASSUME_NONNULL_END

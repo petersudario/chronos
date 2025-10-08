@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="24128" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IGi-cB-aGO">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="24017"/>
+    </dependencies>
+    <scenes>
+        <!--Main Interface Controller-->
+        <scene sceneID="fRD-1l-P1O">
+            <objects>
+                <controller id="IGi-cB-aGO" customClass="MainInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="16" id="9XF-pb-cLx">
+                            <items>
+                                <group width="1" height="20" alignment="center" spacing="1" id="3AZ-jN-edY">
+                                    <items>
+                                        <label alignment="center" text="Nenhum pre-set definido" textAlignment="center" id="aK2-Xl-XCl"/>
+                                    </items>
+                                </group>
+                                <table alignment="center" id="rCc-V9-PxT">
+                                    <items>
+                                        <tableRow identifier="PresetRow" id="baw-4X-izw" customClass="PresetRowController">
+                                            <group key="rootItem" width="1" alignment="left" id="eLd-de-lLc">
+                                                <items>
+                                                    <label width="1" height="72" alignment="center" text="Pomodoro" textAlignment="left" id="89n-nH-GsK">
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                    </label>
+                                                </items>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                            </group>
+                                            <connections>
+                                                <outlet property="presetNameLabel" destination="89n-nH-GsK" id="5wz-hq-exE"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                                <button width="32" height="32" alignment="center" title="+" id="5SG-2D-kc4">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <connections>
+                                        <action selector="addButtonTapped" destination="IGi-cB-aGO" id="sY8-i8-HDj"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="emptyStateGroup" destination="3AZ-jN-edY" id="yaZ-vK-hqI"/>
+                        <outlet property="presetsTable" destination="rCc-V9-PxT" id="42s-x1-vf8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-436" y="92"/>
+        </scene>
+        <!--AddPresetScreen-->
+        <scene sceneID="rkP-wG-yGL">
+            <objects>
+                <controller identifier="AddPresetScreen" spacing="17" id="2zM-mx-aG4" customClass="AddPresetInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="20" id="gp0-6Y-dYk">
+                            <items>
+                                <button width="136" height="30" alignment="center" title="Salvar" id="uOa-42-3mP">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <connections>
+                                        <action selector="saveButtonTapped" destination="2zM-mx-aG4" id="Y4E-nu-b2f"/>
+                                    </connections>
+                                </button>
+                                <textField width="1" alignment="left" placeholder="Pomodoro" id="25B-Ia-AiT" userLabel="PresetNameTextField">
+                                    <accessibilityTraits key="accessibilityTraits" button="YES" image="YES" updatesFrequently="YES"/>
+                                    <connections>
+                                        <action selector="presetNameTextFieldChanged:" destination="2zM-mx-aG4" id="h1W-QL-7aD"/>
+                                    </connections>
+                                </textField>
+                                <group width="1" height="20" alignment="center" spacing="1" id="9uq-zY-ROL" userLabel="Empty State Group">
+                                    <items>
+                                        <label alignment="center" text="Nenhuma etapa definida" textAlignment="center" id="B1o-pQ-gbL"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" spacing="16" id="6zE-gb-PGP">
+                                    <items>
+                                        <table alignment="center" id="RFA-xn-ArI">
+                                            <items>
+                                                <tableRow identifier="StepRow" id="9y9-Ee-eXI" customClass="StepRowController">
+                                                    <group key="rootItem" width="1" alignment="left" id="9zQ-6x-Pwh" customClass="Step">
+                                                        <items>
+                                                            <group width="1" alignment="left" verticalAlignment="center" spacing="24" id="Igw-bT-hgq">
+                                                                <items>
+                                                                    <label alignment="left" verticalAlignment="center" text="Estudo" id="MeJ-EI-9hT"/>
+                                                                    <label alignment="right" text="10:00" id="TeY-Hp-Qxw"/>
+                                                                </items>
+                                                            </group>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <outlet property="stepDurationLabel" destination="TeY-Hp-Qxw" id="ynf-C3-f89"/>
+                                                        <outlet property="stepNameLabel" destination="MeJ-EI-9hT" id="eJy-av-fSO"/>
+                                                    </connections>
+                                                </tableRow>
+                                            </items>
+                                        </table>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <button width="32" height="32" alignment="center" title="+" id="glr-VC-9GZ">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <connections>
+                                <action selector="addStepButtonTapped" destination="2zM-mx-aG4" id="Cj5-PD-mYj"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="emptyStateGroup" destination="B1o-pQ-gbL" id="bAg-z6-nbG"/>
+                        <outlet property="presetNameTextField" destination="25B-Ia-AiT" id="blV-iW-le4"/>
+                        <outlet property="stepsTable" destination="RFA-xn-ArI" id="fy2-m5-eeY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-129" y="112"/>
+        </scene>
+        <!--AddStepScreen-->
+        <scene sceneID="rch-eg-w7W">
+            <objects>
+                <controller identifier="AddStepScreen" id="VrJ-1F-Vro" customClass="AddStepInterfaceController">
+                    <items>
+                        <button width="136" height="30" alignment="center" title="Salvar" id="2JV-7a-Ve4">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <connections>
+                                <action selector="saveButtonTapped" destination="VrJ-1F-Vro" id="iKo-5s-Eru"/>
+                            </connections>
+                        </button>
+                        <picker height="74" alignment="left" id="m5v-1A-u0J">
+                            <connections>
+                                <action selector="stepTypePickerChanged:" destination="VrJ-1F-Vro" id="lvR-4t-mbi"/>
+                            </connections>
+                        </picker>
+                        <group width="300" height="100" alignment="center" id="GRE-B5-dc6">
+                            <items>
+                                <picker width="62" height="56" alignment="left" id="TXU-63-Lfc">
+                                    <connections>
+                                        <action selector="hoursPickerChanged:" destination="VrJ-1F-Vro" id="D6S-Wi-1lx"/>
+                                    </connections>
+                                </picker>
+                                <picker width="75" height="56" alignment="left" id="GHl-hp-tN0">
+                                    <connections>
+                                        <action selector="minutesPickerChanged:" destination="VrJ-1F-Vro" id="skJ-tM-vhW"/>
+                                    </connections>
+                                </picker>
+                                <picker width="75" height="56" alignment="left" id="zQh-PP-3Fp">
+                                    <connections>
+                                        <action selector="secondsPickerChanged:" destination="VrJ-1F-Vro" id="yn6-re-FrY"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="hoursPicker" destination="TXU-63-Lfc" id="cgv-64-L7u"/>
+                        <outlet property="minutesPicker" destination="GHl-hp-tN0" id="rTl-Qo-TBN"/>
+                        <outlet property="secondsPicker" destination="zQh-PP-3Fp" id="Zb0-rm-WcB"/>
+                        <outlet property="stepTypePicker" destination="m5v-1A-u0J" id="wM6-JS-xen"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="188" y="92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
