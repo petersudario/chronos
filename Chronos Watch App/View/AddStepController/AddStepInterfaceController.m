@@ -35,7 +35,7 @@
     self.selectedSecond = 0;
     
     WKPickerItem *workItem = [[WKPickerItem alloc] init];
-    workItem.title = @"Trabalho";
+    workItem.title = @"Ação";
     
     WKPickerItem *pauseItem = [[WKPickerItem alloc] init];
     pauseItem.title = @"Pausa";
@@ -43,21 +43,28 @@
     [self.stepTypePicker setItems:@[workItem, pauseItem]];
     
     NSMutableArray<WKPickerItem *> *hourItems = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i <= 23; i++) {
-        WKPickerItem *item = [[WKPickerItem alloc] init];
-        item.title = [NSString stringWithFormat:@"%02ldh", (long)i];
-        [hourItems addObject:item];
-    }
-    [self.hoursPicker setItems:hourItems];
-    
-    NSMutableArray<WKPickerItem *> *minuteAndSecondItems = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i <= 59; i++) {
-        WKPickerItem *item = [[WKPickerItem alloc] init];
-        item.title = [NSString stringWithFormat:@"%02ld", (long)i];
-        [minuteAndSecondItems addObject:item];
-    }
-    [self.minutesPicker setItems:minuteAndSecondItems];
-    [self.secondsPicker setItems:minuteAndSecondItems];
+        for (NSInteger i = 0; i <= 23; i++) {
+            WKPickerItem *item = [[WKPickerItem alloc] init];
+            item.title = [NSString stringWithFormat:@"%02ldh", (long)i];
+            [hourItems addObject:item];
+        }
+        [self.hoursPicker setItems:hourItems];
+        
+        NSMutableArray<WKPickerItem *> *minuteItems = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i <= 59; i++) {
+            WKPickerItem *item = [[WKPickerItem alloc] init];
+            item.title = [NSString stringWithFormat:@"%02ldm", (long)i];
+            [minuteItems addObject:item];
+        }
+        [self.minutesPicker setItems:minuteItems];
+        
+        NSMutableArray<WKPickerItem *> *secondItems = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i <= 59; i++) {
+            WKPickerItem *item = [[WKPickerItem alloc] init];
+            item.title = [NSString stringWithFormat:@"%02lds", (long)i];
+            [secondItems addObject:item];
+        }
+        [self.secondsPicker setItems:secondItems];
 }
 
 - (IBAction)stepTypePickerChanged:(NSInteger)value {

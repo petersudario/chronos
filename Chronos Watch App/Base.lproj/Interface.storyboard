@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="24128" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IGi-cB-aGO">
-    <device id="watch38"/>
+    <device id="watch40"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="24017"/>
     </dependencies>
@@ -14,7 +14,7 @@
                             <items>
                                 <group width="1" height="20" alignment="center" spacing="1" id="3AZ-jN-edY">
                                     <items>
-                                        <label alignment="center" text="Nenhum pre-set definido" textAlignment="center" id="aK2-Xl-XCl"/>
+                                        <label alignment="center" text="Nenhum pre-set criado" textAlignment="center" id="aK2-Xl-XCl"/>
                                     </items>
                                 </group>
                                 <table alignment="center" id="rCc-V9-PxT">
@@ -78,52 +78,44 @@
             <objects>
                 <controller identifier="AddPresetScreen" spacing="17" id="2zM-mx-aG4" customClass="AddPresetInterfaceController">
                     <items>
-                        <group width="1" alignment="left" layout="vertical" spacing="20" id="gp0-6Y-dYk">
+                        <button width="136" height="30" alignment="center" title="Salvar" id="uOa-42-3mP">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <connections>
+                                <action selector="saveButtonTapped" destination="2zM-mx-aG4" id="Y4E-nu-b2f"/>
+                            </connections>
+                        </button>
+                        <textField width="1" alignment="left" placeholder="Pomodoro" id="25B-Ia-AiT" userLabel="PresetNameTextField">
+                            <accessibilityTraits key="accessibilityTraits" button="YES" image="YES" updatesFrequently="YES"/>
+                            <connections>
+                                <action selector="presetNameTextFieldChanged:" destination="2zM-mx-aG4" id="h1W-QL-7aD"/>
+                            </connections>
+                        </textField>
+                        <group width="1" height="20" alignment="center" spacing="1" id="9uq-zY-ROL">
                             <items>
-                                <button width="136" height="30" alignment="center" title="Salvar" id="uOa-42-3mP">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                    <connections>
-                                        <action selector="saveButtonTapped" destination="2zM-mx-aG4" id="Y4E-nu-b2f"/>
-                                    </connections>
-                                </button>
-                                <textField width="1" alignment="left" placeholder="Pomodoro" id="25B-Ia-AiT" userLabel="PresetNameTextField">
-                                    <accessibilityTraits key="accessibilityTraits" button="YES" image="YES" updatesFrequently="YES"/>
-                                    <connections>
-                                        <action selector="presetNameTextFieldChanged:" destination="2zM-mx-aG4" id="h1W-QL-7aD"/>
-                                    </connections>
-                                </textField>
-                                <group width="1" height="20" alignment="center" spacing="1" id="9uq-zY-ROL" userLabel="Empty State Group">
-                                    <items>
-                                        <label alignment="center" text="Nenhuma etapa definida" textAlignment="center" id="B1o-pQ-gbL"/>
-                                    </items>
-                                </group>
-                                <group width="1" alignment="left" layout="vertical" spacing="16" id="6zE-gb-PGP">
-                                    <items>
-                                        <table alignment="center" id="RFA-xn-ArI">
-                                            <items>
-                                                <tableRow identifier="StepRow" id="9y9-Ee-eXI" customClass="StepRowController">
-                                                    <group key="rootItem" width="1" alignment="left" id="9zQ-6x-Pwh" customClass="Step">
-                                                        <items>
-                                                            <group width="1" alignment="left" verticalAlignment="center" spacing="24" id="Igw-bT-hgq">
-                                                                <items>
-                                                                    <label alignment="left" verticalAlignment="center" text="Estudo" id="MeJ-EI-9hT"/>
-                                                                    <label alignment="right" text="10:00" id="TeY-Hp-Qxw"/>
-                                                                </items>
-                                                            </group>
-                                                        </items>
-                                                    </group>
-                                                    <connections>
-                                                        <outlet property="stepDurationLabel" destination="TeY-Hp-Qxw" id="ynf-C3-f89"/>
-                                                        <outlet property="stepNameLabel" destination="MeJ-EI-9hT" id="eJy-av-fSO"/>
-                                                    </connections>
-                                                </tableRow>
-                                            </items>
-                                        </table>
-                                    </items>
-                                </group>
+                                <label height="100" alignment="center" text="Nenhuma etapa criada" textAlignment="center" id="B1o-pQ-gbL" userLabel="Nenhuma etapa"/>
                             </items>
                         </group>
+                        <table alignment="center" id="RFA-xn-ArI">
+                            <items>
+                                <tableRow identifier="StepRow" id="9y9-Ee-eXI" customClass="StepRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="9zQ-6x-Pwh" customClass="Step">
+                                        <items>
+                                            <group width="1" alignment="left" verticalAlignment="center" spacing="24" id="Igw-bT-hgq">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Estudo" id="MeJ-EI-9hT"/>
+                                                    <label alignment="right" text="10:00" id="TeY-Hp-Qxw"/>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="stepDurationLabel" destination="TeY-Hp-Qxw" id="ynf-C3-f89"/>
+                                        <outlet property="stepNameLabel" destination="MeJ-EI-9hT" id="eJy-av-fSO"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                         <button width="32" height="32" alignment="center" title="+" id="glr-VC-9GZ">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -133,13 +125,13 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="emptyStateGroup" destination="B1o-pQ-gbL" id="bAg-z6-nbG"/>
+                        <outlet property="emptyStateGroup" destination="9uq-zY-ROL" id="3gu-5Q-OcR"/>
                         <outlet property="presetNameTextField" destination="25B-Ia-AiT" id="blV-iW-le4"/>
                         <outlet property="stepsTable" destination="RFA-xn-ArI" id="fy2-m5-eeY"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-129" y="112"/>
+            <point key="canvasLocation" x="-133" y="107"/>
         </scene>
         <!--AddStepScreen-->
         <scene sceneID="rch-eg-w7W">
@@ -153,24 +145,24 @@
                                 <action selector="saveButtonTapped" destination="VrJ-1F-Vro" id="iKo-5s-Eru"/>
                             </connections>
                         </button>
-                        <picker height="74" alignment="left" id="m5v-1A-u0J">
+                        <picker height="54" alignment="left" id="m5v-1A-u0J">
                             <connections>
                                 <action selector="stepTypePickerChanged:" destination="VrJ-1F-Vro" id="lvR-4t-mbi"/>
                             </connections>
                         </picker>
-                        <group width="300" height="100" alignment="center" id="GRE-B5-dc6">
+                        <group height="56" alignment="left" spacing="0.0" id="GRE-B5-dc6">
                             <items>
-                                <picker width="62" height="56" alignment="left" id="TXU-63-Lfc">
+                                <picker width="55" height="60" alignment="left" indicatorMode="shownWhileFocused" id="TXU-63-Lfc" colorLabel="IBBuiltInLabel-Yellow">
                                     <connections>
                                         <action selector="hoursPickerChanged:" destination="VrJ-1F-Vro" id="D6S-Wi-1lx"/>
                                     </connections>
                                 </picker>
-                                <picker width="75" height="56" alignment="left" id="GHl-hp-tN0">
+                                <picker width="62" height="60" alignment="left" indicatorMode="shownWhileFocused" id="GHl-hp-tN0">
                                     <connections>
                                         <action selector="minutesPickerChanged:" destination="VrJ-1F-Vro" id="skJ-tM-vhW"/>
                                     </connections>
                                 </picker>
-                                <picker width="75" height="56" alignment="left" id="zQh-PP-3Fp">
+                                <picker width="55" height="60" alignment="left" indicatorMode="shownWhileFocused" id="zQh-PP-3Fp">
                                     <connections>
                                         <action selector="secondsPickerChanged:" destination="VrJ-1F-Vro" id="yn6-re-FrY"/>
                                     </connections>
@@ -186,7 +178,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="188" y="92"/>
+            <point key="canvasLocation" x="187.20987654320987" y="88.883248730964453"/>
         </scene>
     </scenes>
     <resources>

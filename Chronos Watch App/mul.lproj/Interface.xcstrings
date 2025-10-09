@@ -50,25 +50,25 @@
       }
     },
     "aK2-Xl-XCl.text" : {
-      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Nenhum pre-set definido\"; ObjectID = \"aK2-Xl-XCl\";",
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Nenhum pre-set criado\"; ObjectID = \"aK2-Xl-XCl\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Nenhum pre-set definido"
+            "value" : "Nenhum pre-set criado"
           }
         }
       }
     },
     "B1o-pQ-gbL.text" : {
-      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Nenhuma etapa definida\"; ObjectID = \"B1o-pQ-gbL\";",
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Nenhuma etapa criada\"; ObjectID = \"B1o-pQ-gbL\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Nenhuma etapa definida"
+            "value" : "Nenhuma etapa criada"
           }
         }
       }

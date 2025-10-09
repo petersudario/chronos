@@ -26,11 +26,12 @@
 
 - (void)configureView {
     if (self.currentPreset.steps.count == 0) {
-        [self.emptyStateGroup setHidden:NO];
         [self.stepsTable setHidden:YES];
+        [self.emptyStateGroup setHidden:NO];
+
     } else {
-        [self.emptyStateGroup setHidden:YES];
         [self.stepsTable setHidden:NO];
+        [self.emptyStateGroup setHidden:YES];
         
         [self.stepsTable setNumberOfRows:self.currentPreset.steps.count withRowType:@"StepRow"];
         
