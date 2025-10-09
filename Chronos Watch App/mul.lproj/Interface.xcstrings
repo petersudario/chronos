@@ -85,6 +85,30 @@
         }
       }
     },
+    "Ihm-oV-d9E.text" : {
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"Pomodoro\"; ObjectID = \"Ihm-oV-d9E\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pomodoro"
+          }
+        }
+      }
+    },
+    "jMf-XB-7M5.title" : {
+      "comment" : "Class = \"WKInterfaceController\"; title = \"TimerInterfaceController\"; ObjectID = \"jMf-XB-7M5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TimerInterfaceController"
+          }
+        }
+      }
+    },
     "MeJ-EI-9hT.text" : {
       "comment" : "Class = \"WKInterfaceLabel\"; text = \"Estudo\"; ObjectID = \"MeJ-EI-9hT\";",
       "extractionState" : "extracted_with_value",
@@ -93,6 +117,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Estudo"
+          }
+        }
+      }
+    },
+    "Qto-km-ild.text" : {
+      "comment" : "Class = \"WKInterfaceLabel\"; text = \"3\"; ObjectID = \"Qto-km-ild\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "3"
           }
         }
       }

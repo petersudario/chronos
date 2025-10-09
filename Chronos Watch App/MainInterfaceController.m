@@ -56,4 +56,9 @@
     [self presentControllerWithName:@"AddPresetScreen" context:context];
 }
 
+- (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
+    TimerPreset *selectedPreset = self.presets[rowIndex];
+    [self pushControllerWithName:@"TimerInterfaceController" context:selectedPreset];
+}
+
 @end

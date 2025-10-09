@@ -53,6 +53,26 @@
             </objects>
             <point key="canvasLocation" x="-436" y="92"/>
         </scene>
+        <!--TimerInterfaceController-->
+        <scene sceneID="jYI-Pl-RwJ">
+            <objects>
+                <controller identifier="TimerInterfaceController" title="TimerInterfaceController" id="jMf-XB-7M5" customClass="TimerInterfaceController">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Pomodoro" id="Ihm-oV-d9E">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                        </label>
+                        <label alignment="center" verticalAlignment="center" text="3" textAlignment="center" id="Qto-km-ild">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="countdownLabel" destination="Qto-km-ild" id="iBy-Nt-ybQ"/>
+                        <outlet property="stepLabel" destination="Ihm-oV-d9E" id="YBX-K2-hWy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-464" y="648"/>
+        </scene>
         <!--AddPresetScreen-->
         <scene sceneID="rkP-wG-yGL">
             <objects>
