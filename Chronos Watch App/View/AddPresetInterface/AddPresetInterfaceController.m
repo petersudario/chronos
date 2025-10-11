@@ -32,7 +32,7 @@
     } else {
         [self.stepsTable setHidden:NO];
         [self.emptyStateGroup setHidden:YES];
-        
+         
         [self.stepsTable setNumberOfRows:self.currentPreset.steps.count withRowType:@"StepRow"];
         
         for (NSInteger i = 0; i < self.currentPreset.steps.count; i++) {

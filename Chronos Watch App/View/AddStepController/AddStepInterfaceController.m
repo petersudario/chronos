@@ -35,7 +35,7 @@
     self.selectedSecond = 0;
     
     WKPickerItem *workItem = [[WKPickerItem alloc] init];
-    workItem.title = @"Ação";
+    workItem.title = @"Tarefa";
     
     WKPickerItem *pauseItem = [[WKPickerItem alloc] init];
     pauseItem.title = @"Pausa";
@@ -88,7 +88,7 @@
     NSLog(@"[TELA ETAPA] 4. Valores selecionados: Tipo=%ld, H=%ld, M=%ld, S=%ld", (long)self.selectedTypeIndex, (long)self.selectedHour, (long)self.selectedMinute, (long)self.selectedSecond);
 
     StepType type = (self.selectedTypeIndex == 0) ? StepTypeWork : StepTypePause;
-    NSString *name = (type == StepTypeWork)? @"Trabalho" : @"Pausa";
+    NSString *name = (type == StepTypeWork)? @"Tarefa" : @"Pausa";
     NSTimeInterval duration = (self.selectedHour * 3600) + (self.selectedMinute * 60) + self.selectedSecond;
     TimerStep *newStep = [[TimerStep alloc] initWithName:name type:type duration:duration];
     

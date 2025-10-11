@@ -97,18 +97,6 @@
         }
       }
     },
-    "jMf-XB-7M5.title" : {
-      "comment" : "Class = \"WKInterfaceController\"; title = \"TimerInterfaceController\"; ObjectID = \"jMf-XB-7M5\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "TimerInterfaceController"
-          }
-        }
-      }
-    },
     "MeJ-EI-9hT.text" : {
       "comment" : "Class = \"WKInterfaceLabel\"; text = \"Estudo\"; ObjectID = \"MeJ-EI-9hT\";",
       "extractionState" : "extracted_with_value",

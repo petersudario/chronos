@@ -9,6 +9,7 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 #import "TimerPreset.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface TimerInterfaceController : WKInterfaceController
 
@@ -17,5 +18,6 @@
 
 @property (nonatomic, strong) TimerPreset *preset;
 @property (nonatomic, assign) NSInteger currentStepIndex;
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 @end

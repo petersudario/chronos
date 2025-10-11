@@ -56,7 +56,7 @@
         <!--TimerInterfaceController-->
         <scene sceneID="jYI-Pl-RwJ">
             <objects>
-                <controller identifier="TimerInterfaceController" title="TimerInterfaceController" id="jMf-XB-7M5" customClass="TimerInterfaceController">
+                <controller identifier="TimerInterfaceController" id="jMf-XB-7M5" customClass="TimerInterfaceController">
                     <items>
                         <label alignment="center" verticalAlignment="center" text="Pomodoro" id="Ihm-oV-d9E">
                             <fontDescription key="font" style="UICTFontTextStyleTitle1"/>

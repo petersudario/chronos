@@ -50,6 +50,7 @@
 
 - (void)updateCountdownLabel {
     if (self.countdown > 0) {
+        [self playSoundFileNamed:@"countdown.caf"];
         [self.countdownLabel setText:[NSString stringWithFormat:@"%ld", (long)self.countdown]];
     } else {
         [self.countdownLabel setText:@""];
@@ -67,6 +68,13 @@
     [self.stepLabel setText:step.stepName];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTick) userInfo:nil repeats:YES];
+    if (step.type == StepTypeWork){
+        [self playSoundFileNamed:@"work.caf"];
+    }
+    else if (step.type == StepTypePause){
+        [self playSoundFileNamed:@"pause.caf"];
+
+    }
 }
 
 - (void)stepTick {
@@ -87,8 +95,34 @@
 }
 
 - (void)finishPreset {
+    [self playSoundFileNamed:@"finished.caf"];
     [self.stepLabel setText:@"Concluído!"];
     [self.countdownLabel setText:@""];
 }
+
+- (void)playSoundFileNamed:(NSString *)fileName {
+    NSString *name = [fileName stringByDeletingPathExtension];
+    NSString *extension = [fileName pathExtension];
+
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:name ofType:extension];
+    
+    if (!soundPath) {
+        NSLog(@"Error: Sound file '%@' not found in the WatchKit Extension bundle.", fileName);
+        return;
+    }
+
+    NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+    NSError *error = nil;
+
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+
+    if (error) {
+        NSLog(@"Error initializing audio player: %@", error.localizedDescription);
+        return;
+    }
+    
+    [self.audioPlayer play];
+}
+
 
 @end
